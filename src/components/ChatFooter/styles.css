@@ -1,0 +1,18 @@
+.main__messageBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #ccc;
+  height: 50px;
+  padding: 10px;
+}
+
+.main__messageBar input {
+  width: 100%;
+  height: 35px;
+  margin: 0 5px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0px;
+}

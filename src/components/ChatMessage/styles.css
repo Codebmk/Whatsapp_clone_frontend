@@ -1,0 +1,17 @@
+.message_item {
+  max-width: 300px;
+  background-color: #eee;
+  padding: 8px;
+  margin: 5px 20px;
+  border-radius: 5px;
+}
+
+.message_sender {
+  margin-left: auto;
+}
+
+.message_timeDelivered {
+  display: flex;
+  justify-content: flex-end;
+  color: #ccc;
+}

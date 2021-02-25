@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+}
+
+.sidebar__controlbar {
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.sidebar__searchbar {
+  padding: 5px 10px;
+  background-color: #ccc;
+}
+
+.sidebar__searchbar input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0px;
+  padding: 0 5px;
+}
+
+.sidebar__chatList {
+  height: 74vh;
+  overflow-y: scroll;
+}

@@ -1,0 +1,11 @@
+.sidebar__chatListItem {
+  background-color: #fff;
+  padding: 5px 10px;
+}
+
+.chat_description {
+  display: flex;
+  flex: 1em;
+  justify-content: space-between;
+  margin-left: 5px;
+}

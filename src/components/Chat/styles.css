@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 0.65;
+}
+
+.left_control {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main__controlbar {
+  background-color: #ccc;
+  padding: 10px;
+}
+
+.main__chatMessages {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  overflow-y: scroll;
+}
