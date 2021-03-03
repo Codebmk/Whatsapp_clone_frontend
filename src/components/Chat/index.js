@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ChatMessage from "../ChatMessage";
 import ChatFooter from "../ChatFooter";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
@@ -6,6 +6,27 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import "./styles.css";
 
 const Chat = () => {
+  const messageEl = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [chatMessages, setChatMessages] = useState([]);
+
+  useEffect(() => {
+    if (messageEl) {
+      messageEl.current.addEventListener("DOMNodeInserted", event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: "smooth" });
+      });
+    }
+    setLoading(true);
+    fetch("http://localhost:5000/messages")
+      .then(res => res.json())
+      .then(data => {
+        setChatMessages(data);
+        setLoading(false);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
   return (
     <div className="main">
       {/* control bar */}
@@ -28,12 +49,17 @@ const Chat = () => {
           </span>
         </div>
       </div>
-      {/* chat message area */}
-      <div className="main__chatMessages">
-        <ChatMessage />
-        <ChatMessage />
-        <ChatMessage />
-        <ChatMessage />
+      {/* chat messages */}
+      <div className="main__chatMessages" ref={messageEl}>
+        {loading && (
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status"></div>
+          </div>
+        )}
+        {chatMessages &&
+          chatMessages.map(item => (
+            <ChatMessage key={item._id} messageData={item} />
+          ))}
       </div>
       {/* message input area */}
       <ChatFooter />

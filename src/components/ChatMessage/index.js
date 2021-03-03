@@ -1,14 +1,14 @@
 import React from "react";
+import moment from "moment";
 import "./styles.css";
 
-const ChatMessage = () => {
+const ChatMessage = ({ messageData }) => {
   return (
     <div className="message_item">
-      <div className="message_txt">
-        This property specifies whether to clip content or to add scrollbars
-        when an element's content is too big to fit in a specified area
-      </div>
-      <small className="message_timeDelivered">4:30am</small>
+      <div className="message_txt">{messageData.txtMessage}</div>
+      <small className="message_timeDelivered">
+        {moment(messageData.createdAt).format("LT")}
+      </small>
     </div>
   );
 };
