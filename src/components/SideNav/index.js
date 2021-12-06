@@ -8,7 +8,7 @@ const SideNav = () => {
   return (
     <div className="sidebar">
       {/* control bar */}
-      <div className="sidebar__controlbar d-flex justify-content-between align-items-center">
+      <div className="sidebar__controlbar">
         <div className="profileImage">
           <img src="logo192.png" width="35" height="35" alt="dp" />
         </div>
@@ -27,6 +27,9 @@ const SideNav = () => {
       </div>
       {/* most recent chats list */}
       <div className="sidebar__chatList">
+        <SideNavChatItem />
+        <SideNavChatItem />
+        <SideNavChatItem />
         <SideNavChatItem />
         <SideNavChatItem />
         <SideNavChatItem />

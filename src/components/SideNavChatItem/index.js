@@ -4,8 +4,7 @@ import "./styles.css";
 const SideNavChatItem = () => {
   return (
     <div className="sidebar__chatListItem">
-      <div className="d-flex align-items-center">
-        <div className="chat_profileImage">
+      <div className="chat_profileImage">
           <img src="logo192.png" width="35" height="35" alt="profile" />
         </div>
         <div className="chat_description">
@@ -17,7 +16,6 @@ const SideNavChatItem = () => {
             <small>4:30am</small>
           </div>
         </div>
-      </div>
     </div>
   );
 };

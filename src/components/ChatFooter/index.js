@@ -23,7 +23,7 @@ const ChatFooter = () => {
     <form onSubmit={handleSubmit}>
       <div className="main__messageBar">
         <SentimentVerySatisfiedIcon />
-        <input type="text" value={chatMessage} onChange={handleChange} />
+        <input type="text" value={chatMessage} onChange={handleChange} placeholder="Message" />
         <MicIcon />
       </div>
     </form>
